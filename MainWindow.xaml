@@ -1,0 +1,27 @@
+﻿<Window x:Class="BayesianADStoch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BayesianADStoch"
+        mc:Ignorable="d"
+        Title="Adaptive Bayesian Deterministic Stochastic" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition  Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Input" Grid.Row="0" Grid.Column="0"/>
+        <Label Content="Process" Grid.Row="0" Grid.Column="1"/>
+        <Label Content="Output" Grid.Row="0" Grid.Column="2"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=512}" Grid.Column="0" x:Name="lstInput" Grid.Row="1"/>
+        <Button Grid.Column="1" Content="Click here to start the Process" x:Name="btnProcess" Click="btnProcess_Click" Grid.Row="1"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=512}" Grid.Column="2" x:Name="lstOutput" Grid.Row="1"/>
+
+    </Grid>
+</Window>
